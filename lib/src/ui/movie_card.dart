@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 
 class MovieCard extends StatelessWidget {
   final index;
@@ -18,7 +19,7 @@ class MovieCard extends StatelessWidget {
         children: [
           Expanded(
             child: Image.network(
-              'https://image.tmdb.org/t/p/w185${results[index].poster_path}',
+              'https://image.tmdb.org/t/p/w500${results[index].poster_path}',
               fit: BoxFit.cover,
             ),
           ),
@@ -27,8 +28,9 @@ class MovieCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                AutoSizeText(
                   results[index].title,
+                  maxLines: 1,
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
