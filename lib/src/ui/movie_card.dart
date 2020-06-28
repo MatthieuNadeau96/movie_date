@@ -31,10 +31,12 @@ class MovieCard extends StatelessWidget {
                 AutoSizeText(
                   results[index].title,
                   maxLines: 1,
+                  minFontSize: 16,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontSize: 25,
+                    fontSize: 20,
                   ),
                 ),
                 SizedBox(height: 5),
