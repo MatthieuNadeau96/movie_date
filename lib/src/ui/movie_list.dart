@@ -3,6 +3,7 @@ import 'package:movie_app/src/ui/movie_card.dart';
 import '../models/item_model.dart';
 import '../blocs/movies_bloc.dart';
 import 'package:flutter_tindercard/flutter_tindercard.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MovieList extends StatelessWidget {
   @override
@@ -39,10 +40,10 @@ class MovieList extends StatelessWidget {
                 onPressed: () {},
               ),
               Text(
-                'Movie Date.',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
+                'Movie Date',
+                style: GoogleFonts.roboto(
+                  fontSize: 35,
+                  fontWeight: FontWeight.w800,
                 ),
               ),
               IconButton(
@@ -57,8 +58,8 @@ class MovieList extends StatelessWidget {
             child: TinderSwapCard(
               orientation: AmassOrientation.BOTTOM,
               totalNum: snapshot.data.results.length,
-              stackNum: 3,
-              swipeEdge: 6.0,
+              stackNum: 2,
+              swipeEdge: 3.0,
               maxHeight: deviceSize.height * 0.6,
               maxWidth: deviceSize.width * 0.75,
               minHeight: deviceSize.height * 0.58,

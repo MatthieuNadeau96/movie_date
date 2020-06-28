@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class MovieCard extends StatelessWidget {
   final index;
   final results;
@@ -33,23 +35,23 @@ class MovieCard extends StatelessWidget {
                   maxLines: 1,
                   minFontSize: 16,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w500,
                     fontSize: 20,
                   ),
                 ),
                 SizedBox(height: 5),
                 Text(
                   results[index].release_date.substring(0, 4),
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: Colors.grey,
                   ),
                 ),
                 SizedBox(height: 5),
                 Text(
                   '${results[index].popularity.toStringAsFixed(0)} / 100',
-                  style: TextStyle(
+                  style: GoogleFonts.montserrat(
                     color: Colors.black,
                   ),
                 ),
