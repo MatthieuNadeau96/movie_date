@@ -18,12 +18,27 @@ class MovieDetails extends StatelessWidget {
         body: Column(
           children: [
             Container(
-              child: Hero(
-                child: Image.network(
-                  'https://image.tmdb.org/t/p/w500${results[index].poster_path}',
-                  fit: BoxFit.cover,
-                ),
-                tag: 'card ${[index]}',
+              child: Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  Hero(
+                    child: Image.network(
+                      'https://image.tmdb.org/t/p/w500${results[index].poster_path}',
+                      fit: BoxFit.cover,
+                    ),
+                    tag: 'card ${[index]}',
+                  ),
+                  Positioned(
+                    top: 30,
+                    child: IconButton(
+                      iconSize: 30,
+                      icon: Icon(Icons.cancel),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  )
+                ],
               ),
             ),
             Padding(
