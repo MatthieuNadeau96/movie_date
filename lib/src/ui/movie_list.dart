@@ -8,7 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 class MovieList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    bloc.fetchAllMovies();
+    bloc.fetchPopularMovies();
     return Scaffold(
       body: StreamBuilder(
         stream: bloc.allMovies,

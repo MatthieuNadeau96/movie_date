@@ -41,6 +41,9 @@ class _Result {
   bool _adult;
   String _overview;
   String _release_date;
+  int _runtime;
+  int _revenue;
+  int _budget;
 
   _Result(result) {
     _vote_count = result['vote_count'];
@@ -59,7 +62,16 @@ class _Result {
     _adult = result['adult'];
     _overview = result['overview'];
     _release_date = result['release_date'];
+    _runtime = result['runtime'];
+    _revenue = result['revenue'];
+    _budget = result['budget'];
   }
+
+  int get budget => _budget;
+
+  int get revenue => _revenue;
+
+  int get runtime => _runtime;
 
   String get release_date => _release_date;
 
