@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/src/ui/movie_details.dart';
 
 class MovieCard extends StatelessWidget {
   final index;
@@ -20,9 +21,22 @@ class MovieCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: Image.network(
-              'https://image.tmdb.org/t/p/w500${results[index].poster_path}',
-              fit: BoxFit.cover,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MovieDetails(index, results),
+                  ),
+                );
+              },
+              child: Hero(
+                child: Image.network(
+                  'https://image.tmdb.org/t/p/w500${results[index].poster_path}',
+                  fit: BoxFit.cover,
+                ),
+                tag: 'card ${[index]}',
+              ),
             ),
           ),
           Padding(
